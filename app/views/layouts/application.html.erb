@@ -11,7 +11,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-purple-50 w-full h-screen flex flex-col justify-start items-center gap-6 p-8 text-slate-800 overflow-y-auto">
-    <%= yield %>    
+  <body>
+    <main class="bg-purple-50 w-full h-screen min-h-full flex flex-col justify-start items-center gap-6 text-slate-800 overflow-y-auto">
+      <%= yield %> 
+    </main>
   </body>
 </html>
