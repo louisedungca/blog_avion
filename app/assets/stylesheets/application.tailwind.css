@@ -1,13 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lato:wght@100;300;400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+@layer base {
+  html {
+    font-family: 'Lato', sans-serif;
   }
 }
 
-*/
+
+/* scrollbar */
+::-webkit-scrollbar { 
+  width: 5px;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(148, 163, 184);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(88, 28, 135);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(41, 37, 36);
+}
