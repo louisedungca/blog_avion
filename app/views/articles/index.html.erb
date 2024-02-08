@@ -1,21 +1,26 @@
-<main class="bg-purple-50 w-full h-screen flex flex-col justify-start items-center gap-6 p-8 text-slate-800">
-  <div class="w-full flex flex-col justify-center items-center">
-    <h1 class="text-[10rem] tracking-widest font-semibold">BLOG</h1>
-  </div>
+<div class="bg-purple-50 w-full flex flex-col justify-center items-center sticky inset-0 z-10">
+  <h1 class="text-[10rem] tracking-widest font-semibold">BLOG</h1>
+</div>
 
-  <div class="w-2/3 flex flex-col gap-4">
-    <% @articles.each do |article| %>
-      <div class="h-full border-b-2 border-slate-600 flex flex-col py-4 px-2 tracking-wider overflowy-auto">
-        <h2 class="font-serif text-xl font-semibold">
-          <%= article.title %>
-        </h2>
-        <small class="italic font-serif py-1">
-          <%= article.author_name %>
-        </small>
-        <p class="text-base font-light pt-2 h-full max-h-20 truncate">
-          <%= article.body %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-</main>
+<div class="w-2/3 flex flex-col gap-4">
+  <% @articles.each_with_index do |article, idx| %>
+  <div class="flex gap-4 justify-center items-center">
+    <h1 class="px-2 text-[4rem] tracking-wide font-bold text-slate-500/55">
+      <%= idx + 1 < 10 ? "0#{idx + 1}" : idx + 1 %>
+    </h1>
+    <div class="w-full h-full border-b-2 border-slate-600 flex flex-col py-4 px-2 tracking-wider overflowy-auto">
+      <h2 class="font-serif text-xl font-semibold">
+        <%= article.title %>
+      </h2>
+      <small class="italic font-serif py-1">
+        <%= article.author_name %>
+      </small>
+      <p class="text-base font-light pt-2 h-full max-h-20 truncate">
+        <%= article.body %>
+      </p>
+    </div>
+  </div>    
+  <% end %>
+</div>
+
+
