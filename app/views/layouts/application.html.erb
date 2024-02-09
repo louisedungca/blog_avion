@@ -13,6 +13,14 @@
 
   <body>
     <main class="bg-purple-50 w-full h-screen min-h-full flex flex-col justify-start items-center gap-6 text-slate-800 overflow-y-auto">
+      <div class="w-1/4 h-auto sticky inset-0 z-20">
+        <% flash.each do |type, message| %>
+          <div class=" text-red-500 mt-2 py-2 px-4 rounded-lg text-xs tracking-wider font-semibold border-2 border-red-500 border-dashed">
+            ** <%= message %>
+          </div>
+        <% end %>
+      </div>
+
       <%= yield %> 
     </main>
   </body>

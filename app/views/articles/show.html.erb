@@ -1,0 +1,21 @@
+<div class="bg-purple-50 w-full flex flex-col justify-center items-center py-4 sticky inset-0 z-10 border-b-2 border-dotted border-slate-500">
+  <h1 class="text-[10rem] tracking-widest font-semibold uppercase">
+    <%= @article.title %>
+  </h1>
+  <h2 class="font-xl italic font-serif py-1">
+    <%= @article.author_name %>
+  </h2>
+  
+</div>
+
+<div class="w-2/3 aspect-square flex flex-col items-center gap-4 py-4"> 
+  <div class="w-full max-w-2/5 h-full border-b-2 border-slate-600 flex flex-col py-4 px-2 tracking-wider">    
+    <p class="text-base font-light">
+      <%= @article.body %>
+    </p>
+  </div>
+  <div class="w-full flex flex-col justify-center items-center gap-4">     
+    <%= link_to 'Edit', edit_article_path, class:"btn__main flex justify-center items-center font-semibold" %> 
+    <%= link_to 'Home', articles_index_path, class:"btn__main flex justify-center items-center font-semibold" %>
+  </div>
+</div>

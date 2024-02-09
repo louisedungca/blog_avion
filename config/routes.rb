@@ -3,23 +3,38 @@ Rails.application.routes.draw do
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
-  # get "up" => "rails/health#show", as: :rails_health_check
+  get "up" => "rails/health#show", as: :rails_health_check
 
   # return an HTML form for creating a new article/blog post
   get 'articles/new',
   to: 'articles#new', #controller_name#action
-  as: :new_article
+  as: :new_article # path helper
+
+  # display all articles for path: /articles
+  get 'articles',
+  to: 'articles#index',
+  as: :articles_index
 
   # display a specific article
   get 'articles/:id',
   to: 'articles#show',
   as: :article
 
+  # get specific article to edit
+  get 'articles/:id/edit',
+  to: 'articles#edit',
+  as: :edit_article
+
+  # update changes on the specific article
+  patch 'articles/:id',
+  to: 'articles#update'
+
   # 	create a new article
   post 'articles',
   to: 'articles#create',
   as: :articles
 
+  # resources :articles
 
   # Defines the root path route ("/")
   # root "posts#index"
