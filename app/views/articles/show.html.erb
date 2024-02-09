@@ -14,5 +14,8 @@
       <%= @article.body %>
     </p>
   </div>
-  <%= link_to 'Home', articles_index_path, class:"btn__main flex justify-center items-center font-semibold" %> 
+  <div class="w-full flex flex-col justify-center items-center gap-4">     
+    <%= link_to 'Edit', edit_article_path, class:"btn__main flex justify-center items-center font-semibold" %> 
+    <%= link_to 'Home', articles_index_path, class:"btn__main flex justify-center items-center font-semibold" %>
+  </div>
 </div>
