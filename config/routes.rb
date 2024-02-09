@@ -20,6 +20,15 @@ Rails.application.routes.draw do
   to: 'articles#show',
   as: :article
 
+  # get specific article to edit
+  get 'articles/:id/edit',
+  to: 'articles#edit',
+  as: :edit_article
+
+  # update changes on the specific article
+  patch 'articles/:id',
+  to: 'articles#update'
+
   # 	create a new article
   post 'articles',
   to: 'articles#create',
