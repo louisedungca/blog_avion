@@ -7,6 +7,6 @@ class Article < ApplicationRecord
   private
 
   def default_author_name
-    self.author_name = "Anonymous" if author_name == nil
+    self.author_name = "Anonymous" if author_name.blank?
   end
 end

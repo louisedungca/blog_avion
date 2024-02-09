@@ -9,11 +9,12 @@
   html {
     font-family: 'Lato', sans-serif;
   }
+
 }
 
 @layer components {
   .btn__main {
-    @apply border-2 border-slate-700 w-1/3 p-2 rounded-lg uppercase text-center tracking-wider hover:opacity-555;
+    @apply border-2 border-slate-700 w-1/3 p-2 rounded-lg uppercase text-center tracking-wider hover:opacity-55;
   }
 }
 

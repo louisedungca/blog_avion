@@ -4,14 +4,12 @@
 
 <div class="w-3/5 flex flex-col justify-center px-4">
   <%= form_with model: @article do |form| %>
-    <% if form.object.errors.any? %>
+    <% if @article.errors.any? %>
       <div>
-        <% form.object.errors.full_messages.each do |message| %>
-          <div>
-            <span>
-              <%= message %>
-            </span>
-          </div>
+        <% @article.errors.each do |message| %>
+          <h1>
+            <%= error.full_message %>
+          </h1>
         <% end %>
       </div>
     <% end %>
@@ -33,9 +31,7 @@
       </div>
 
       <%= form.button "Create Post", class:"btn__main" %>
-      <%= link_to 'Home', root_path, class:"btn__main flex justify-center items-center" %> 
+      <%= link_to 'Home', articles_index_path, class:"btn__main flex justify-center items-center" %> 
     </div>
   <% end %>
 </div>
-
-  
