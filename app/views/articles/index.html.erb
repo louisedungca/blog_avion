@@ -1,6 +1,6 @@
-<div class="bg-purple-50 w-full flex flex-col justify-center items-center py-4 sticky inset-0 z-10 border-b-2 border-dotted border-slate-500">
+<div class="bg-purple-50 w-full h-full flex flex-col justify-center items-center py-4 sticky inset-0 z-10 border-b-2 border-dotted border-slate-500">
   <h1 class="text-[10rem] tracking-widest font-semibold uppercase">
-    ALL BLOGS
+    <%= @articles.size > 0 ? "ALL BLOGS" : "HELLO" %>
   </h1>
   <%= link_to 'Add new post', new_article_path, class:"btn__main flex justify-center items-center font-semibold" %> 
 </div>
