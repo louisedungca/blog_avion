@@ -1,6 +1,6 @@
 <div class="bg-purple-50 w-full flex flex-col justify-center items-center py-4 sticky inset-0 z-10 border-b-2 border-dotted border-slate-500">
   <h1 class="text-[10rem] tracking-widest font-semibold uppercase">
-    BLOG
+    ALL BLOGS
   </h1>
   <%= link_to 'Add new post', new_article_path, class:"btn__main flex justify-center items-center font-semibold" %> 
 </div>
@@ -8,11 +8,11 @@
 <div class="w-2/3 aspect-square flex flex-col gap-4 py-4"> 
   <% @articles.each_with_index do |article, idx| %>
   <div class="w-full flex gap-4 justify-center items-center">
-    <h1 class="w-1/5 px-2 text-[4rem] tracking-wide font-bold text-slate-500/55">
+    <h1 class="w-1/5 px-2 text-[4rem] tracking-wide font-bold text-slate-500/55 cursor-default">
       <%= idx + 1 < 10 ? "0#{idx + 1}" : idx + 1 %>
     </h1>
     <div class="w-full max-w-2/5 h-full border-b-2 border-slate-600 flex flex-col py-4 px-2 tracking-wider">
-      <h2 class="font-serif text-xl font-semibold">
+      <h2 class="font-serif text-xl font-semibold hover:opacity-55">
         <%= link_to article.title, article %>
       </h2>
       <small class="italic font-serif py-1">

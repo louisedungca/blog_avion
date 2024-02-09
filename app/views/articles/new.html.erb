@@ -13,21 +13,21 @@
             </p>
           <% end %>
         </div>
-      <% end %>      
+      <% end %>
 
       <div class="w-full flex flex-col justify-center items-center gap-4 uppercase tracking-wider font-semibold">
-        <div class="w-full flex items-center justify-between">
-          <%= form.label :title, class:"w-1/4" %>
+        <div class="w-full flex items-center gap-2">
+          <%= form.label "Title", class:"w-1/4" %>
           <%= form.text_field :title, placeholder: "Enter Title...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif" %>
         </div>
 
-        <div class="w-full flex items-center justify-between">
-          <%= form.label :author_name, "Author", class:"w-1/4" %>
+        <div class="w-full flex items-center justify-between gap-2">
+          <%= form.label "Author", class:"w-1/4" %>
           <%= form.text_field :author_name, placeholder: "Enter Author's name...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif" %>
         </div>
 
-        <div class="w-full flex items-center justify-between">
-          <%= form.label :body, class:"w-1/4" %>
+        <div class="w-full flex items-center justify-between gap-2">
+          <%= form.label "Body", class:"w-1/4" %>
           <%= form.text_area :body, placeholder: "Enter text...", class:"resize-none w-full h-[10rem] bg-transparent rounded-lg border-2 border-slate-700 border-dotted overflow-y-auto p-2 font-serif font-light" %>
         </div>
 

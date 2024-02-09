@@ -5,7 +5,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find_by(id: params[:id])
+
+    if @article.nil?
+      @articles = Article.all
+      flash[:alert] = "Blog post not found."
+      render :index
+    end
   end
 
   def new
@@ -16,7 +22,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to root_path
+      redirect_to articles_index_path
     else
       render :new, status: :unprocessable_entity
     end
