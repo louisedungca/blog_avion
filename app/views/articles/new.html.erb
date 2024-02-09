@@ -6,9 +6,9 @@
   <%= form_with model: @article do |form| %>
     <% if @article.errors.any? %>
       <div>
-        <% @article.errors.each do |message| %>
+        <% @article.errors.full_messages.each do |message| %>
           <h1>
-            <%= error.full_message %>
+            <%= message %>
           </h1>
         <% end %>
       </div>

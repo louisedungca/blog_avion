@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    if @article.save!
+    if @article.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
