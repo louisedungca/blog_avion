@@ -29,10 +29,20 @@ Rails.application.routes.draw do
   patch 'articles/:id',
   to: 'articles#update'
 
-  # 	create a new article
+  # archive specific article instead of hard delete
+  patch 'articles/:id/archive',
+  to: 'articles#archive',
+  as: :archive_article
+
+  # create a new article
   post 'articles',
   to: 'articles#create',
   as: :articles
+
+  # delete a specific article
+  delete 'articles/:id',
+  to: 'articles#destroy',
+  as: :destroy_article
 
   # resources :articles
 
