@@ -6,6 +6,6 @@ one:
   author_name: MyString
 
 two:
-  title: MyString
-  body: MyText
-  author_name: MyString
+  title: MyTitle
+  body: MyContent
+  author_name: MyAuthor
