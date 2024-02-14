@@ -6,10 +6,11 @@
 </div>
 
 <div class="w-2/3 aspect-square flex flex-col gap-4 py-4"> 
-  <% @articles.sort { |a, b| b <=> a }.each_with_index do |article| %>
+  <% @articles.each_with_index do |article, idx| %>
   <div class="w-full flex gap-4 justify-center items-center">
     <h1 class="w-1/5 px-2 text-[4rem] tracking-wide font-bold text-slate-500/55 cursor-default">
-      <%= article.id < 10 ? "0#{article.id}" : article.id %>
+      <%#= article.id < 10 ? "0#{article.id}" : article.id %>
+      <%= (@articles.size - idx) < 10 ? "0#{@articles.size - idx}" : @articles.size - idx %>
     </h1>
     <div class="w-full max-w-2/5 h-full border-b-2 border-slate-600 flex flex-col py-4 px-2 tracking-wider">
       <h2 class="font-serif text-xl font-semibold hover:opacity-55">
