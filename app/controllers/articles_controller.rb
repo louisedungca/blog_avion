@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to articles_index_path
+      redirect_to articles_index_path, notice: "Blog post successfully created!"
     else
       render :new, status: 422
     end
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-      redirect_to @article
+      redirect_to @article, notice: "Blog post successfully updated!"
     else
       render :edit, status: 422
     end
