@@ -1,13 +1,13 @@
 <div class="bg-purple-50 w-full h-full flex flex-col justify-center items-center py-4 sticky inset-0 z-10 border-b-2 border-dotted border-slate-500">
-  <h1 class="text-[10rem] tracking-widest font-semibold uppercase">
+  <h1 class="text-fSize__xl tracking-widest font-semibold uppercase">
     <%= @articles.size > 0 ? "ALL BLOGS" : "HELLO" %>
   </h1>
   <%= link_to "Add new post", new_article_path, class:"btn__main flex justify-center items-center font-semibold" %> 
 </div>
 
-<div class="w-2/3 aspect-square flex flex-col gap-4 py-4"> 
+<div class="w-full sm:w-2/3 aspect-square flex flex-col gap-4 sm:py-4 px-2"> 
   <% @articles.each_with_index do |article, idx| %>
-  <div class="w-full flex gap-4 justify-center items-center">
+  <div class="w-full flex justify-center sm:items-center flex-col sm:flex-row gap-2 sm:gap-4">
     <h1 class="w-1/5 px-2 text-[4rem] tracking-wide font-bold text-slate-500/55 cursor-default">
       <%= (@articles.size - idx) < 10 ? "0#{@articles.size - idx}" : @articles.size - idx %>
     </h1>
@@ -18,7 +18,7 @@
       <small class="italic font-serif py-1">
         <%= article.author_name %>
       </small>
-      <p class="text-base font-light pt-2">
+      <p class="text-fSize__md font-light pt-2">
         <%= article.body %>
       </p>
     </div>
