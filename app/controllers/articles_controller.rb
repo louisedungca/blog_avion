@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to articles_index_path, notice: "Blog post successfully created!"
+      redirect_to articles_path, notice: "Blog post successfully created!"
     else
       render :new, status: 422
     end
