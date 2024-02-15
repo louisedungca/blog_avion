@@ -1,4 +1,4 @@
-<div class="w-3/5 flex flex-col justify-center px-4">
+<div class="w-full sm:w-3/5 flex flex-col justify-center px-4">
   <%= form_with model: @article do |form| %> 
     <div class="flex flex-col justify-center items-center gap-2 px-3">
       <% if @article.errors.any? %>
@@ -12,23 +12,23 @@
       <% end %>
 
       <div class="w-full flex flex-col justify-center items-center gap-4 uppercase tracking-wider font-semibold py-4">
-        <div class="w-full flex items-center gap-2">
-          <%= form.label "Title", class:"w-1/4" %>
-          <%= form.text_field :title, placeholder: "Enter Title...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif" %>
+        <div class="w-full flex flex-col sm:flex-row items-center gap-2">
+          <%= form.label "Title", class:"sm:w-1/4" %>
+          <%= form.text_field :title, placeholder: "Enter Title...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif text-xs sm:text-sm" %>
         </div>
 
-        <div class="w-full flex items-center justify-between gap-2">
-          <%= form.label "Author", class:"w-1/4" %>
-          <%= form.text_field :author_name, placeholder: "Enter Author's name...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif" %>
+        <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-2">
+          <%= form.label "Author", class:"sm:w-1/4" %>
+          <%= form.text_field :author_name, placeholder: "Enter Author's name...", class:"w-full bg-transparent rounded-lg border-2 border-slate-700 border-dotted p-2 font-serif text-xs sm:text-sm" %>
         </div>
 
-        <div class="w-full flex items-center justify-between gap-2">
-          <%= form.label "Body", class:"w-1/4" %>
-          <%= form.text_area :body, placeholder: "Enter text...", class:"resize-none w-full h-[10rem] bg-transparent rounded-lg border-2 border-slate-700 border-dotted overflow-y-auto p-2 font-serif font-light" %>
+        <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-2">
+          <%= form.label "Body", class:"sm:w-1/4" %>
+          <%= form.text_area :body, placeholder: "Enter text...", class:"resize-none w-full h-[10rem] bg-transparent rounded-lg border-2 border-slate-700 border-dotted overflow-y-auto p-2 font-serif font-light text-xs sm:text-sm" %>
         </div>
 
         <%= form.button "Submit", class:"btn__main" %>
-        <%= link_to 'Home', articles_index_path, class:"btn__main flex justify-center items-center" %> 
+        <%= link_to "Home", articles_path, class:"btn__main flex justify-center items-center" %> 
       </div>
     </div>  
   <% end %>
